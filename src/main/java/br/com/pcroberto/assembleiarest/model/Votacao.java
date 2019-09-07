@@ -1,6 +1,7 @@
 package br.com.pcroberto.assembleiarest.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "votacao")
@@ -15,6 +16,9 @@ public class Votacao {
 
     @Column
     private Integer minutos;
+
+    @Column
+    private Date dataCriacao;
 
     @Column
     public Long getId() {
@@ -39,5 +43,14 @@ public class Votacao {
 
     public void setMinutos(Integer minutos) {
         this.minutos = minutos;
+    }
+
+
+    public Date getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(Date dataCriacao) {
+        this.dataCriacao = dataCriacao;
     }
 }
