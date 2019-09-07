@@ -1,0 +1,25 @@
+version: '3.1'
+services:
+  assembleia-db:
+    image: postgres:latest
+    container_name: assembleia-db
+    working_dir: /application
+    volumes:
+      - .:/application
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=assembleia
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=assembleia
+
+  assembleia-web:
+    build: docker
+    container_name: assembleia-web
+    ports:
+      - "8888:8080"
+    volumes:
+      - .:/code
+    depends_on:
+      - assembleia-db
+
