@@ -240,10 +240,10 @@ Date: Tue, 10 Sep 2019 01:52:44 GMT
 }
 ```
 
-``POST /voto/search/votacao?votacao={votacao}`` - Consulta todos os votos de acordo com a votação informada
+``GET /voto/search/votacao?votacao={votacao}`` - Consulta todos os votos de acordo com a votação informada
 
 ```json
-Exemplo: http://localhost:8888/voto/search/votacao\?votacao\=http://localhost:8888/votacao/2
+Exemplo: curl -i http://localhost:8888/voto/search/votacao\?votacao\=http://localhost:8888/votacao/2
 
 Retorno:
 HTTP/1.1 200 
