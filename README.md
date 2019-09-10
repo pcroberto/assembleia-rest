@@ -18,7 +18,7 @@ Este projeto é uma API REST. Abaixo estão as rotas disponíveis com exemplos d
 
 ``GET /pauta`` - Lista todas as pautas
 
-``GET /conta?page=PAGINA_SELECIONA`` - Lista todas as pautas cadastradas conforme a paginação
+``GET /pauta?page=PAGINA_SELECIONA`` - Lista todas as pautas cadastradas conforme a paginação
 
 
 ```json
