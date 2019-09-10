@@ -3,17 +3,17 @@ package br.com.pcroberto.assembleiarest.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "pauta")
+@Table(name = "pauta", uniqueConstraints = @UniqueConstraint(columnNames = {"nome"}))
 public class Pauta {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     private String nome;
 
-    @Column
+    @Column(nullable = false)
     private String descricao;
 
     public Long getId() {

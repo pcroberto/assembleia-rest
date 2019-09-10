@@ -3,20 +3,21 @@ package br.com.pcroberto.assembleiarest.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "voto")
+@Table(name = "voto", uniqueConstraints = @UniqueConstraint(columnNames = {"associado", "votacao_id"}))
 public class Voto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     private boolean voto;
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Votacao votacao;
 
-    @Column
+    @Column(nullable = false)
     private Integer associado;
 
     public Long getId() {

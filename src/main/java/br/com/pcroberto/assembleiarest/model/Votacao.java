@@ -4,23 +4,22 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "votacao")
+@Table(name = "votacao", uniqueConstraints = @UniqueConstraint(columnNames = {"pauta_id"}))
 public class Votacao {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     private Long id;
 
-    @OneToOne
+    @OneToOne(optional = false)
     private Pauta pauta;
 
-    @Column
+    @Column(nullable = false)
     private Integer minutos;
 
-    @Column
+    @Column(nullable = false)
     private Date dataCriacao;
 
-    @Column
     public Long getId() {
         return id;
     }
